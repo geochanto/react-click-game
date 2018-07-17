@@ -1,9 +1,54 @@
 import React from 'react';
 
-const Gamecards = [
-    {
-        
-    }
+let Gamecards = [
+  {
+    src: "./img/1.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/2.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/3.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/4.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/5.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/6.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/7.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/8.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/9.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/10.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/11.jpg",
+    clicked: false
+  },
+  {
+    src: "./img/12.jpg",
+    clicked: false
+  }
 ]
 
 function shuffle(array) {
@@ -25,9 +70,7 @@ function shuffle(array) {
     return array;
   }
   
-  // Used like so
-  var arr = [2, 11, 37, 42];
-  arr = shuffle(arr);
-  console.log(arr);
+  Gamecards = shuffle(Gamecards);
+  console.log(Gamecards);
 
   export default Gamecards;
