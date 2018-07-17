@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Container, Row, Col } from 'reactstrap';
+import Gamecards from './components/Gamecards/Gamecards.js';
 
 class App extends Component {
   render() {
