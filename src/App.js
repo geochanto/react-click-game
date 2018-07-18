@@ -17,20 +17,6 @@ class App extends Component {
         </p>
 
         <Container>
-          {/* <Row>
-            <Col sm="6" xs="12" md="3">.col 1</Col>
-            <Col sm="6" xs="12" md="3">.col 2</Col>
-            <Col sm="6" xs="12" md="3">.col 3</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-            <Col sm="6" xs="12" md="3">.col</Col>
-          </Row> */}
         <Gamecards/>
         </Container>
       </div>

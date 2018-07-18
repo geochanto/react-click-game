@@ -64,7 +64,7 @@ let gamecards = [
   }
 ]
 
-function shuffle(array) {
+const shuffle = array => {
     var currentIndex = array.length, temporaryValue, randomIndex;
   
     // While there remain elements to shuffle...
@@ -84,7 +84,6 @@ function shuffle(array) {
   }
   
   gamecards = shuffle(gamecards);
-  console.log(gamecards);
 
   const Gamecards = () => (
     <GamecardsList gamecards={gamecards}/>

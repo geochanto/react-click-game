@@ -5,8 +5,8 @@ import {Row, Col } from 'reactstrap';
 const GamecardsList = props => (
   <Row>
     {props.gamecards.map(item => (
-      <Col sm="6" xs="12" md="3" key={item.id}>
-        <img className="img-fluid" src={"img/"+item.src}></img>
+      <Col sm="6" xs="6" md="3" key={item.id}>
+        <img className="img" src={"img/"+item.src} data-clicked={item.clicked}></img>
       </Col>
     ))}
     </Row>
