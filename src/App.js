@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 import Gamecards from './components/Gamecards/Gamecards.js';
-
+import GamecardsList from './components/Gamecards/GamecardsList.js';
 class App extends Component {
   render() {
     return (
@@ -17,7 +17,7 @@ class App extends Component {
         </p>
 
         <Container>
-          <Row>
+          {/* <Row>
             <Col sm="6" xs="12" md="3">.col 1</Col>
             <Col sm="6" xs="12" md="3">.col 2</Col>
             <Col sm="6" xs="12" md="3">.col 3</Col>
@@ -30,7 +30,8 @@ class App extends Component {
             <Col sm="6" xs="12" md="3">.col</Col>
             <Col sm="6" xs="12" md="3">.col</Col>
             <Col sm="6" xs="12" md="3">.col</Col>
-          </Row>
+          </Row> */}
+        <Gamecards/>
         </Container>
       </div>
     );

@@ -1,52 +1,65 @@
 import React from 'react';
+import GamecardsList from './GamecardsList.js';
 
-let Gamecards = [
+let gamecards = [
   {
-    src: "./img/1.jpg",
+    id: 1,
+    src: "1.jpg",
     clicked: false
   },
   {
-    src: "./img/2.jpg",
+    id: 2,
+    src: "2.jpg",
     clicked: false
   },
   {
-    src: "./img/3.jpg",
+    id: 3,
+    src: "3.jpg",
     clicked: false
   },
   {
-    src: "./img/4.jpg",
+    id: 4,
+    src: "4.jpg",
     clicked: false
   },
   {
-    src: "./img/5.jpg",
+    id: 5,
+    src: "5.jpg",
     clicked: false
   },
   {
-    src: "./img/6.jpg",
+    id: 6,
+    src: "6.jpg",
     clicked: false
   },
   {
-    src: "./img/7.jpg",
+    id: 7,
+    src: "7.jpg",
     clicked: false
   },
   {
-    src: "./img/8.jpg",
+    id: 8,
+    src: "8.jpg",
     clicked: false
   },
   {
-    src: "./img/9.jpg",
+    id: 9,
+    src: "9.jpg",
     clicked: false
   },
   {
-    src: "./img/10.jpg",
+    id: 10,
+    src: "10.jpg",
     clicked: false
   },
   {
-    src: "./img/11.jpg",
+    id: 11,
+    src: "11.jpg",
     clicked: false
   },
   {
-    src: "./img/12.jpg",
+    id: 12,
+    src: "12.jpg",
     clicked: false
   }
 ]
@@ -70,7 +83,11 @@ function shuffle(array) {
     return array;
   }
   
-  Gamecards = shuffle(Gamecards);
-  console.log(Gamecards);
+  gamecards = shuffle(gamecards);
+  console.log(gamecards);
+
+  const Gamecards = () => (
+    <GamecardsList gamecards={gamecards}/>
+  );
 
   export default Gamecards;
