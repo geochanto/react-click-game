@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class GamecardsList extends Component {
   state = {
-    count: 0
+    currentScore: 0,
+    topScore: 0,
+    currentAnswer: "",
+    message: "Click an image to begin"
   };
 
   shuffle = array => {
@@ -26,55 +29,67 @@ class GamecardsList extends Component {
   }
 
   makeClickedTrue = props => {
-    // console.log('id: ' + props);
-    // console.log(this.props.gamecards);
-
-    let toChange = this.props.gamecards.find(obj => 
+    let toChange = this.props.gamecards.find(obj =>
       obj.id === props
     )
-    // console.log('to Change: '+ toChange.id)
     toChange.clicked = true;
-    // console.log (this.props.gamecards);
   };
 
   loseGame = () => {
-    // console.log(this.props.gamecards);
     this.props.gamecards.map(item => {
       item.clicked = false;
-      this.state.count = 0;
-      console.log(item.clicked);
-      // this.shuffle(this.props.gamecards);
+      
     });
+    // this.state.currentScore = 0;
+    this.setState({ 
+      currentAnswer: false,
+      currentScore: 0, 
+      message: 'Wrong Answer... Game Over :( But Try Again!' 
+    });
+    this.shuffle(this.props.gamecards);
+    // this.setState({ message: 'Wrong Answer... Game Over :( But Try Again!' });
   }
 
-  isClicked = (props,props2) => {
+  handleclick = (props, props2) => {
     if (props === false) {
-      this.setState({ count: this.state.count += 1 });
-      console.log('count: ' + this.state.count);
+      this.setState({ 
+        currentAnswer: true,
+        currentScore: this.state.currentScore += 1,
+        message: 'Correct! Keep going!'
+      });
 
       this.makeClickedTrue(props2);
 
       this.shuffle(this.props.gamecards);
-      console.log(this.props);
+      if (this.state.topScore < this.state.currentScore) {
+        this.setState({ topScore: this.state.currentScore });
+      }
+      // this.setState({ message: 'Correct! Keep going!' });
 
-      
     }
     else {
-      console.log('you lost. try again');
       this.loseGame();
     }
   };
 
   render() {
     return (
-      <Row>
-        {this.props.gamecards.map(item => (
-          <Col sm="6" xs="6" md="3" key={item.id}>
-            <img className="img" src={"img/" + item.src} data-id={item.id} alt="" data-clicked={item.clicked}
-              onClick={() => this.isClicked(item.clicked,item.id)}></img>
-          </Col>
-        ))}
-      </Row>
+      <Container>
+        <Row>
+          <Col sm="6" xs="6" md="3"><strong>Current Score:</strong>  {this.state.currentScore}</Col>
+          <Col sm="6" xs="6" md="3"><strong>Top Score:</strong>  {this.state.topScore}</Col>
+          <Col sm="6" xs="6" md="3" className={'answer-'+this.state.currentAnswer}><strong>Last Answer:</strong>  {this.state.message}</Col>
+
+        </Row>
+        <Row>
+          {this.props.gamecards.map(item => (
+            <Col sm="6" xs="6" md="3" key={item.id}>
+              <img className="img" src={"img/" + item.src} data-id={item.id} alt="" data-clicked={item.clicked}
+                onClick={() => this.handleclick(item.clicked, item.id)}></img>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }

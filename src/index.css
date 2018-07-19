@@ -22,8 +22,17 @@ body {
   padding-bottom: 30px;
 }
 
+.answer-true {
+  color: green;
+}
+
+.answer-false {
+  color: red;
+}
+
 @media all and (max-width: 575px) {
   .img {
     height: 200px;
   }
 }
+
